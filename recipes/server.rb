@@ -8,3 +8,10 @@
 #
 
 include_recipe "nfs::server"
+
+nfs_export "/var/www" do
+  network '192.168.50.0/24'
+  writeable false 
+  sync true
+  options ['no_root_squash']
+end
