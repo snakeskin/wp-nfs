@@ -9,7 +9,7 @@
 
 include_recipe "nfs::server"
 
-nfs_export "/var/www" do
+nfs_export "/var/www/wordpress" do
   network '192.168.50.0/24'
   writeable false 
   sync true
