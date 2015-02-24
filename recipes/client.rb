@@ -9,7 +9,6 @@
 
 include_recipe "nfs::client4"
 
-share = node["wp"]["nfs"]
 
 directory "/var/www/wordpress" do
 	mode '0775'
@@ -19,8 +18,9 @@ directory "/var/www/wordpress" do
     recursive true
 end
 	
+
 mount "/var/www/wordpress" do
-  device "#{share}:/var/www/wordpress"
+  device "#{node["wp"]["nfs"]}:/var/www/wordpress"
   fstype "nfs"
   options "rw"
 end
