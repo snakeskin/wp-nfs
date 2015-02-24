@@ -10,7 +10,7 @@
 include_recipe "nfs::client4"
 
 
-directory "#{node["wp"]["nfs"]}" do
+directory "/var/www/wordpress" do
 	mode '0775'
     owner 'root'
     group 'root'
