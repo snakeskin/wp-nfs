@@ -11,6 +11,14 @@ include_recipe "nfs::client4"
 
 share = node["wp"]["nfs"]
 
+directory "#{share}" do
+	mode '0775'
+    owner 'root'
+    group 'root'
+    action :create
+    recursive true
+end
+	
 mount "/var/www/wordpress" do
   device "#{share}:/var/www/wordpress"
   fstype "nfs"
