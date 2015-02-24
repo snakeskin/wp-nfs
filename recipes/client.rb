@@ -9,8 +9,10 @@
 
 include_recipe "nfs::client4"
 
+share = node["wp"]["nfs"]
+
 mount "/var/www/wordpress" do
-  device "node["wp"]["nfs"]:/var/www/wordpress"
+  device "#{share}:/var/www/wordpress"
   fstype "nfs"
   options "rw"
 end
