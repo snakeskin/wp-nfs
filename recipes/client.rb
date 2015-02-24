@@ -9,6 +9,7 @@
 
 include_recipe "nfs::client4"
 
+share = node["wp"]["nfs"]
 
 directory "/var/www/wordpress" do
 	mode '0775'
