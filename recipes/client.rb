@@ -11,7 +11,7 @@ include_recipe "nfs::client4"
 
 share = node["wp"]["nfs"]
 
-directory "#{share}" do
+directory "/var/www/wordpress" do
 	mode '0775'
     owner 'root'
     group 'root'
