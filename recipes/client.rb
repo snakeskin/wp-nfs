@@ -16,6 +16,7 @@ directory "/var/www/wordpress" do
     group 'root'
     action :create
     recursive true
+	not_if { ::File.directory?("/var/www/wordpress") }
 end
 	
 
