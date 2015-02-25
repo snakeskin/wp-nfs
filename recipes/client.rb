@@ -20,7 +20,7 @@ end
 	
 
 mount "/var/www/wordpress" do
-  device "#{node["wp"]["nfs"]}:/var/www/wordpress"
+  device "#{node["ipaddress"]}:/var/www/wordpress"
   fstype "nfs"
   options "rw"
 end
