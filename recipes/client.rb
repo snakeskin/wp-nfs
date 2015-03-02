@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "nfs::client4"
+include_recipe "nfs"
 
 
 directory "/var/www/wordpress" do
