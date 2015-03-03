@@ -23,5 +23,5 @@ end
 mount "/var/www/wordpress" do
   device "#{node["wp"]["nfs"]}:/var/www/wordpress"
   fstype "nfs"
-  options "rw"
+  options ["rw", "vers=3"]
 end
