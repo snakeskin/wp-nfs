@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "nfs"
+include_recipe "nfs::_idmap"
 
 
 directory "/var/www/wordpress" do
