@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "nfs::server4"
+include_recipe "nfs::server"
 
 nfs_export "/var/www/wordpress" do
   network '192.168.50.0/24'
